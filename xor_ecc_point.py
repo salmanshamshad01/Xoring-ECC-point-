@@ -8,9 +8,7 @@
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # Step 3: Computes SID_{i} == DID_{i} \oplus H(SID_{j}\|n_{i}\|\tau_{i}\|T_{i}).P_{pub} and DM_{i1} = H(SID_{j}\|n_{i}\|\tau_{i}\|T_{i}).G
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# Step 4: Determines DID_{i} from SID_{i} and DM_{i1}, while already having pi 
-# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# $DID_{i} = SID_{i} \oplus DM_{i1}.\pi$
+# Step 4: Determines DID_{i} from SID_{i} and DM_{i1}, while already having pi as DID_{i} = SID_{i} \oplus DM_{i1}.\pi
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 import hashlib
