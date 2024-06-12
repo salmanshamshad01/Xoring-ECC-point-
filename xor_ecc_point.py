@@ -1,26 +1,17 @@
-#This document demonstrates that an elliptic curve point can be multiplied with a hash value and the resultant can be XORed with other values, ensuring the protocol's feasibility and correctness.
-
+#This document demonstrates that an elliptic curve point can be multiplied with a hash value, and the resultant can be XORed with other values,
+#ensuring the protocol's feasibility and correctness.
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# Step 1: Generate Random values: 
+#pi, DID_i, n_i, tau_i, T_i (Current timestamp) 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# Step 1: Generate Random Numbers
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# pi, DID_i, n_i, tau_i, T_i (Current timestamp)
-
+# Step 2: Initialize the Elliptic Curve (SECP256k1) and Base Point (G)
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# Step 2: Initialize Elliptic Curve and Base Point
-# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# Elliptic Curve: SECP256k1
-# Base Point: G
-
-# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# Step 3: Computes SID_{i} and DM_{i1}
-# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# $SID_{i} = DID_{i} \oplus H(SID_{j}\|n_{i}\|\tau_{i}\|T_{i}).P_{pub}
-# $DM_{i1} = H(SID_{j}\|n_{i}\|\tau_{i}\|T_{i}).G
-
+# Step 3: Computes SID_{i} == DID_{i} \oplus H(SID_{j}\|n_{i}\|\tau_{i}\|T_{i}).P_{pub} and DM_{i1} = H(SID_{j}\|n_{i}\|\tau_{i}\|T_{i}).G
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # Step 4: Determines DID_{i} from SID_{i} and DM_{i1}, while already having pi 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # $DID_{i} = SID_{i} \oplus DM_{i1}.\pi$
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 import hashlib
 import time
